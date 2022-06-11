@@ -16,10 +16,10 @@
     <title>js-book</title>
 </head>
 
-<body>
+<body id="body">
     <h1 class="title">My library</h1>
     <div class="open-button-div">
-        <button class="open-button" onclick="openForm()">+</button>
+        <button class="open-button" id="open-button">+</button>
     </div>
 
     <div class="form-popup" id="myForm" style="display: none;">
@@ -39,9 +39,9 @@
                 <input type="checkbox" id="status-id" name="status">
             </div>
             <div class="form-container-btn">
-                <button type="button" class="btn" onclick="addBookToLibrary()"><img
+                <button type="submit" class="btn" onclick="addBookToLibrary()"><img
                         src="./pictues/check-svgrepo-com (1).svg"></button>
-                <button type="button" class="btn cancel" onclick="closeForm()"><img
+                <button type="button" class="btn cancel" id="close-button"><img
                         src="./pictues/cancel-svgrepo-com.svg"></button>
             </div>
         </form>

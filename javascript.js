@@ -9,6 +9,11 @@ var authorInput = document.getElementById("author")
 var pagesInput = document.getElementById("pages")
 var bookShelf = document.getElementById("book-shelf")
 var bookStatus = document.getElementById("status-id")
+var body = document.getElementById("body")
+var myForm = document.getElementById("myForm")
+var openButton = document.getElementById("open-button")
+var closeButton = document.getElementById("close-button")
+open = false
 //-----------------------------------------ADD book code-----------------------------------------//
 let myLibrary = [];
 
@@ -58,7 +63,7 @@ function createBookCard(myLib, bookView) {
 }
 
 function addBookToLibrary(e) {
-    if (titleInput.value == "") {
+    if (titleInput.value == "" || authorInput.value== "" || pagesInput.value=="" ) {
         return
     } else {
         newBook = new Book(titleInput.value, authorInput.value, pagesInput.value, bookStatus.checked)
@@ -70,22 +75,33 @@ function addBookToLibrary(e) {
     }
 }
 //-----------------------------------------Form open/close-----------------------------------------//
-// let closeForm = document.getElementById("myForm")
-// closeForm.style.display = "none";
-
-function openForm() {
-    let openForm = document.getElementById("myForm")
-    openForm.style.display = "block";
-    openForm.classList.remove("closed")
+function openForm(){
+    body.classList.add("body-blur")
+    myForm.style.display = "block";
+    open = true
 }
 
-function closeForm() {
-    let closeForm = document.getElementById("myForm")
-    closeForm.style.display = "none";
-    closeForm.classList.add("closed")
-
+function closeForm(){
+    body.classList.remove("body-blur")
+    myForm.style.display = "none";
+    open=false
 }
+
+document.addEventListener("click", function (e) {
+    var closeIfOutside = myForm.contains(e.target)
+    console.log(closeIfOutside)
+    var ifClosed = openButton.contains(e.target)
+    var ifOpen = closeButton.contains(e.target)
+    console.log(ifOpen)
+    if (ifClosed && open === false) {
+        openForm()
+    } else if (!closeIfOutside && open === true|| ifOpen) {
+        closeForm()
+    }
+})
 //-----------------------------------------Button actions-----------------------------------------//
+
+
 var bookDelete = document.querySelector("#book-shelf")
 bookDelete.addEventListener("click", function (e) {
     if (e.target.closest(".book-icon")) { //-----------------------------------------book read toggle
