@@ -6,7 +6,7 @@
 
 body {
     padding: 20px;
-    background-color: #fde68a;
+    background-color: #F95700FF;
 
 }
 
@@ -31,21 +31,21 @@ body {
     height: 50px;
     border-radius: 50%;
     border: 0;
-    background-color: #ef4444;
+    background-color: #00A4CCFF;
     color: white;
     transition: opacity 0.2s, color 0.2s, transform 0.2s;
 }
 
 .open-button:hover {
     cursor: pointer;
-    color: #fde68a;
+    color: #F95700FF;
     opacity: 0.8;
     transform: rotate(180deg);
 }
 
 .open-button:focus {
     cursor: pointer;
-    color: #fde68a;
+    color: #F95700FF;
     box-shadow: inset 8px 8px 16px rgb(0 0 0 / 10%);
 }
 
@@ -64,7 +64,7 @@ body {
 
 .form-container {
     border-radius: 10%;
-    background-color: #f59e0b;
+    background-color: #00A4CCFF;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 50px 20px 40px 20px 40px 20px 40px 20px 50px;
@@ -151,15 +151,18 @@ body {
 }
 
 .book-card>h3 {
-    color: #00A4CCFF;
+    color: #1e293b;
+    font-family: 'Roboto', sans-serif;
 }
 
 .book-card>h4 {
-    color: #00A4CCFF;
+    color: #1e293b;
+    font-family: 'Roboto', sans-serif;
 }
 
 .book-card>p{
-    color:#00A4CCFF;
+    color:#1e293b;
+    font-family: 'Roboto', sans-serif;
 }
 
 .book-card-end {
@@ -183,13 +186,13 @@ body {
 
 .book-icon:hover {
     cursor: pointer;
-    opacity: 0.5;
+    opacity: 0.8;
 }
 
 .delete-book:hover {
     cursor: pointer;
     filter: invert(30%) sepia(42%) saturate(3516%) hue-rotate(341deg) brightness(85%) contrast(103%);
-    opacity: 0.5;
+    opacity: 0.8;
 }
 
 /*                      Tooltips             */
