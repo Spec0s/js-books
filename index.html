@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./javascript.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&display=swap" rel="stylesheet">
+    <title>js-book</title>
+</head>
+
+<body>
+    <h1 class="title">My library</h1>
+    <div class="open-button-div">
+        <button class="open-button" onclick="openForm()">+</button>
+    </div>
+
+    <div class="form-popup" id="myForm" style="display: none;">
+        <form class="form-container">
+            <h1>Add new book</h1>
+
+            <label for="title"><b>Title</b></label>
+            <input type="text" placeholder="Enter title" name="title" id="title" required>
+
+            <label for="author"><b>Author</b></label>
+            <input type="text" placeholder="Book author" name="author" id="author" required>
+
+            <label for="pages"><b>Pages</b></label>
+            <input type="number" placeholder="number of pages" name="pages" id="pages" required>
+            <div class="status-check">
+                <label for="status">Have you read this book?</label>
+                <input type="checkbox" id="status-id" name="status">
+            </div>
+            <div class="form-container-btn">
+                <button type="button" class="btn" onclick="addBookToLibrary()"><img
+                        src="./pictues/check-svgrepo-com (1).svg"></button>
+                <button type="button" class="btn cancel" onclick="closeForm()"><img
+                        src="./pictues/cancel-svgrepo-com.svg"></button>
+            </div>
+        </form>
+    </div>
+    <div id="book-shelf">
+    </div>
+
+
+
+</body>
+
+</html>

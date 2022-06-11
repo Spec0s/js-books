@@ -1,0 +1,225 @@
+/*                  Page Top */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding: 20px;
+    background-color: #fde68a;
+}
+
+.title {
+    font-size: 3.5rem;
+    text-align: center;
+    font-family: 'Goudy Bookletter 1911', serif;
+}
+
+.open-button-div {
+    display: grid;
+    justify-items: center;
+}
+
+.open-button {
+    font-size: 2rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 0;
+    background-color: #ef4444;
+    color: white;
+    transition: opacity 0.2s, color 0.2s,transform 0.2s;
+}
+
+.open-button:hover {
+    cursor: pointer;
+    color: #fde68a;
+    opacity: 0.8;
+    transform: rotate(180deg);
+}
+
+.open-button:focus {
+    cursor: pointer;
+    color: #fde68a;
+    box-shadow: inset 8px 8px 16px rgb(0 0 0 / 10%);
+}
+
+/*                  Pop up Form */
+.form-popup {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    /* transition: width 5s, height 5s, display 5s; */
+}
+
+.form-container {
+    border-radius: 10%;
+    background-color: #f59e0b;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px 20px 40px 20px 40px 20px 40px 20px 50px;
+    padding: 20px;
+    align-content: space-between;
+    box-shadow: 8px 8px 16px rgba(154, 52, 18, 10%);
+}
+
+/* .closed{
+    width: 1px;
+    height: 1px;
+} */
+
+.form-container>h1 {
+    display: grid;
+    text-align: center;
+    align-items: center;
+}
+
+.status-check {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+.form-container>input {
+    all: unset;
+    background-color: #fde68a;
+    border-radius: 10px 100px / 120px;
+    padding: 0 5px;
+    box-shadow: inset 8px 8px 16px rgba(154, 52, 18, 10%);
+}
+
+.form-container-btn {
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: 50px 50px;
+    grid-template-rows: 50px;
+    justify-content: space-around;
+    align-content: center;
+}
+
+.form-container-btn>.btn {
+    all: unset;
+    height: 50px;
+}
+
+.form-container-btn>button>img {
+    transition: filter 0.2s;
+}
+
+.form-container-btn>:nth-child(1)>img:hover {
+    filter: invert(89%) sepia(36%) saturate(910%) hue-rotate(25deg) brightness(96%) contrast(87%);
+    cursor: pointer;
+}
+
+.form-container-btn>:nth-child(2)>img:hover {
+    filter: invert(30%) sepia(42%) saturate(3516%) hue-rotate(341deg) brightness(85%) contrast(103%);
+    cursor: pointer;
+}
+
+/*                  Books and Shelf */
+#book-shelf {
+    display: grid;
+    margin: 20px auto;
+    padding: 50px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-rows: repeat(3, 250px);
+    gap: 1rem;
+    border-radius: 20px;
+    width: 90vw;
+    height: 100vh;
+    box-shadow: inset 8px 8px 16px rgba(154, 52, 18, 10%);
+}
+
+.book-card {
+    display: grid;
+    grid-template-columns: 1fr;
+    font-family: 'Goudy Bookletter 1911', serif;
+    align-items: center;
+    border-radius: 30px;
+    padding: 20px;
+    box-shadow: inset 8px 8px 16px rgba(127, 29, 29, 0.1);
+    text-align: center;
+}
+
+.book-card>h2 {
+    font-size: 2rem;
+}
+
+.book-card>h3 {}
+
+.book-card>h4 {}
+
+.book-card-end {
+    display: grid;
+    grid-template-columns: 50px 50px;
+    justify-items: center;
+    justify-content: center;
+}
+
+.book-icon {
+    width: 30px;
+    height: 30px;
+    transition: opacity 0.1s;
+}
+
+.delete-book {
+    width: 30px;
+    height: 30px;
+    transition: opacity 0.1s;
+}
+
+.book-icon:hover {
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.delete-book:hover {
+    cursor: pointer;
+    filter: invert(30%) sepia(42%) saturate(3516%) hue-rotate(341deg) brightness(85%) contrast(103%);
+    opacity: 0.5;
+}
+
+/*                      Tooltips             */
+.tooltip {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    transition-delay: 0.5s;
+  }
+  
+  .tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
